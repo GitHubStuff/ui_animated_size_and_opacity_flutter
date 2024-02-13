@@ -2,4 +2,4 @@
 
 ## 0.0.1
 
-* TODO: Describe initial release.
+* 14-Feb-2024: Initial commit

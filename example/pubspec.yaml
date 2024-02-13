@@ -1,4 +1,4 @@
-name: app_template
+name: animated_size_demo
 description: A new Flutter template.
 
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
@@ -14,11 +14,12 @@ dependencies:
     sdk: flutter
   ##app_settings: ^5.1.1 # A Flutter plugin for opening iOS and Android phone settings from an app.
   ##cupertino_icons: ^1.0.6 # This is an asset repo for Cupertino widgets.
+  flutter_bloc: ^8.1.4
   flutter_modular: ^6.3.2 # Smart project structure with dependency injection and route management
   ui_extensions_flutter:
     git: https://github.com/GitHubStuff/ui_extensions_flutter.git
-  package_template:
-    path: ../../package_template
+  ui_animated_size_and_opacity_flutter:
+    path: ../../ui_animated_size_and_opacity_flutter
 
 # dart run build_runner build -d
 dev_dependencies:
@@ -35,16 +36,16 @@ flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
   remove_alpha_ios: true
-  image_path: "assets/images/ltmm1024x1024.png"
+  image_path: "assets/images/demo.png"
   macos:
     generate: true
-    image_path: "assets/images/ltmm1024x1024.png"
+    image_path: "assets/images/demo.png"
   web:
     generate: true
-    image_path: "assets/images/ltmm1024x1024.png"
+    image_path: "assets/images/demo.png"
   windows:
     generate: true
-    image_path: "assets/images/ltmm1024x1024.png"
+    image_path: "assets/images/demo.png"
 
 # Element of flutter_gen https://pub.dev/packages/flutter_gen/install
 # '% dart pub global activate flutter_gen'

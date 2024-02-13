@@ -1,8 +1,6 @@
 # SETUP
 
-- Find/Replace `package_template` to name of the name of the package (ex: `flutter_rocks`)
-- Addess the *TODO:* in the **/example** folder by adding code from the package
-- If needed/wanted follow the instructions in the **/example/README.md** to have the example app more reflective of your package and show off features of widget packages.
+Widget that allows a child widget and opacity to be animated. Ideally used to add animation (and opacity) to reveal/hide widgets
 
 <!--
 The comments below are from the Flutter/Dart package generation. Feel free to use or ignore
@@ -21,29 +19,68 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Size or Size & Opacity can be animated.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```yaml
+dependencies:
+  ui_animated_size_and_opacity_flutter:
+    git: https://github.com/GitHubStuff/ui_animated_size_and_opacity_flutter.git
+```
+
+Create a **UIAnimatedSizeAndOpacityCubit** and include a **BlocProvider** in the widget tree to access the cubit.
+
+```dart
+@override
+  Widget build(BuildContext context) {
+    return BlocProvider<UIAnimatedSizeAndOpacityCubit>(
+      create: (context) => cubit,               // The cubit
+      child: Scaffold(
+        body: homeWidget(context),
+        floatingActionButton: null,
+      ),
+    );
+  }
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+In the widget tree:
 
 ```dart
-const like = 'sample';
+        UIAnimatedSizeAndOpacity(
+            expandableAnimatedCubit: cubit,
+            size: const Size(125, 125),
+            child: Assets.images.demo.image(),
+          )
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+Only **expandableAnimatedCubit:**, **size:**, and **child:** are required
+
+The declaration:
+
+```dart
+const UIAnimatedSizeAndOpacity({
+    super.key,
+    required this.expandableAnimatedCubit,
+    required this.size,
+    this.animateOpacity = true,
+    this.curve = Curves.easeInOut,
+    this.duration = const Duration(milliseconds: 500),
+    this.expandableType = ExpansionEnum.dropdown,
+    this.minimalSize = const Size(0.0, 0.0),
+    this.onEnd,
+    required this.child,
+  });
+```
+
+*See **/example** for demo*
+
+## Finally
+
+***Be kind to each other!***
